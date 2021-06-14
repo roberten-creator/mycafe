@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  margin: 0;
 }
 
 body {
@@ -44,6 +45,7 @@ button {
 
 .content-wrapper {
   max-width: 1100px;
+  width: 100%;
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -351,12 +353,26 @@ body.noscroll {
 
 @media screen and (max-width: 768px) {
 
+  html {
+    width: 100%;
+  }
+
   body {
     font-size: 1.4rem;
   }
 
+  .fv {
+    width: 100%;
+  }
+
   .section-wrapper {
     padding: 40px 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .section-wrapper:first-of-type::after {
+    width: 100%;
   }
 
   .site-title {
@@ -369,8 +385,10 @@ body.noscroll {
   }
 
   .header-nav {
-    width: 67.7%;
+    width: 67.7vw;
+    transform: translateX(100%);
   }
+
 
   .copy-wrapper {
     right: -15%;
@@ -446,8 +464,8 @@ body.noscroll {
     }
 
     .contact-img-wrapper{
-      width: 520px;
-      min-width: 100%;
+      width: 100%;
+      max-width: 520px;
     }
 
     .section-wrapper:last-of-type {

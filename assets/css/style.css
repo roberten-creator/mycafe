@@ -1,10 +1,11 @@
 html {
   font-size: 62.5%;
+  margin: 0;
 }
 
 body {
   font-size: 1.6rem;
-  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
   color: #333;
 }
 
@@ -17,11 +18,10 @@ a {
   text-decoration: none;
   display: inline-block;
 }
-
 a:hover {
-  opacity: .7;
-  -webkit-transition: .3s;
-  transition: .3s;
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 button {
@@ -53,6 +53,7 @@ button {
 
 .content-wrapper {
   max-width: 1100px;
+  width: 100%;
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -93,8 +94,8 @@ button {
 
 .site-title.black svg path {
   fill: #333;
-  -webkit-transition: fill .3s;
-  transition: fill .3s;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 
 .header-nav {
@@ -112,10 +113,10 @@ button {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
-  -webkit-transition: opacity .3s, -webkit-transform .3s;
-  transition: opacity .3s, -webkit-transform .3s;
-  transition: transform .3s, opacity .3s;
-  transition: transform .3s, opacity .3s, -webkit-transform .3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .nav-item {
@@ -158,17 +159,17 @@ button {
 .bar_top {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .bar_bottom {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .menu {
@@ -183,25 +184,25 @@ button {
 .bar.cross.bar_top {
   -webkit-transform: translateY(2px) rotate(30deg);
           transform: translateY(2px) rotate(30deg);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .bar.cross.bar_mid {
   opacity: 0;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .bar.cross.bar_bottom {
   -webkit-transform: translateY(-2px) rotate(-30deg);
           transform: translateY(-2px) rotate(-30deg);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 body.noscroll {
@@ -212,10 +213,10 @@ body.noscroll {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1;
-  -webkit-transition: opacity .3s, -webkit-transform .3s;
-  transition: opacity .3s, -webkit-transform .3s;
-  transition: transform .3s, opacity .3s;
-  transition: transform .3s, opacity .3s, -webkit-transform .3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 }
 
 .burger-musk {
@@ -231,20 +232,19 @@ body.noscroll {
 
 .burger-btn.black .bar {
   background-color: #333;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .burger-btn.black .menu {
   color: #333;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .fv {
   height: 100vh;
 }
-
 .fv::after {
   content: "";
   display: block;
@@ -390,48 +390,77 @@ body.noscroll {
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    width: 100%;
+  }
+
   body {
     font-size: 1.4rem;
   }
+
+  .fv {
+    width: 100%;
+  }
+
   .section-wrapper {
     padding: 40px 0;
+    margin: 0;
+    width: 100%;
   }
+
+  .section-wrapper:first-of-type::after {
+    width: 100%;
+  }
+
   .site-title {
     width: 180px;
     top: 21px;
   }
+
   .burger-btn {
     top: 28px;
   }
+
   .header-nav {
-    width: 67.7%;
+    width: 67.7vw;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
+
   .copy-wrapper {
     right: -15%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
+
   .copy_jp {
     font-size: 1.6rem;
   }
+
   .copy_company {
     font-size: 1.6rem;
   }
+
   .main-copy {
     font-size: 5.4rem;
   }
+
   .section-wrapper:first-of-type {
     padding: 80px 0 4vw;
   }
+
   .content-wrapper.about-bg {
     padding: 50px 4vw;
   }
+
   .about-content {
     margin: 0 auto;
   }
+
   .l-section-wrapper {
     padding: 40px 0;
   }
+
   .l-content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -442,22 +471,28 @@ body.noscroll {
             align-items: flex-start;
     padding: 0 4vw;
   }
+
   .s-section-wrapper {
     width: 520px;
     max-width: 100%;
   }
+
   .s-section-wrapper:first-of-type {
     margin-bottom: 80px;
   }
+
   .topics-title {
     font-size: 1.2rem;
   }
+
   .topics-item {
     margin-bottom: 20px;
   }
+
   .ml-auto {
     margin-left: 0;
   }
+
   .content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -468,16 +503,20 @@ body.noscroll {
             align-items: flex-start;
     padding: 0 4vw;
   }
+
   .contact-content {
     width: 440px;
     max-width: 100%;
     margin-top: 30px;
   }
+
   .contact-img-wrapper {
-    width: 520px;
-    min-width: 100%;
+    width: 100%;
+    max-width: 520px;
   }
+
   .section-wrapper:last-of-type {
     padding-bottom: 80px;
   }
 }
+/*# sourceMappingURL=style.css.map */
